@@ -15,9 +15,6 @@ if($_FILES['csv']['error'] == 0){
 
     if($ext === 'csv'){
         if(($handle = fopen($tmpName, 'r')) !== FALSE) {
-            // necessary if a large csv file
-            set_time_limit(0);
-
             $row = 0;
 
             while(($data = fgetcsv($handle, 1000, ';')) !== FALSE) {
