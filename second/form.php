@@ -24,6 +24,7 @@ $tmpName = $_FILES['csv']['tmp_name'];
             $type = explode('.', $rowName);
             $fh = fopen('./upload/' . $row . "." . end($type), 'w');
             fwrite($fh, $rowContent);
+            fclose($fh);
         }
         fclose($handle);
     }
